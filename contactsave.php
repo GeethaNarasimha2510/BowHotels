@@ -4,7 +4,7 @@
 		// username => root now your db username 
 		// password => empty now your oen password
 		// database name => Your database name
-		$conn = mysqli_connect("localhost", "root", "", "bow_hotel_group2");
+		$conn = mysqli_connect("bowhotelgroup2database.czptxhzjxjrt.us-east-1.rds.amazonaws.com", "admin", "bowhotelgroup2", "bow_hotel_group2");
 		
 		// Check connection
 		if($conn === false){
