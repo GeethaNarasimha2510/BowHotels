@@ -21,7 +21,7 @@
 		$stmt->bind_param("sss", $cName, $cEmail, $cMessage);
 		// Execute the prepared statement
 if ($stmt->execute()) {
-    echo "<h3>Data stored in the database successfully.</h3>";
+    echo "<h3>Data stored in the Bow hotel database successfully.</h3>";
     echo nl2br("\n$cName\n$cEmail\n$cMessage");
 } else {
     echo "ERROR: Could not execute query: " . $stmt->error;
