@@ -24,6 +24,8 @@
 
       <nav class="navbar">
          <a href="index.html">home</a>
+         <a href="#about">about</a>
+         <a href="#room">explore hotels</a>
          <a href="#contactus" class="btn"> contact us</a>
       </nav>
 
@@ -40,24 +42,24 @@
       <h1 class="contact-heading">Contact Us</h1>
       <p class="contact-caption">Please fill out the form below to contact</p>
 
-      <form action="" style="background: rgba(222, 237, 253, 0.714);
-    box-shadow: var(--box-shadow);">
+      <form action="contactsave.php" style="background: rgba(222, 237, 253, 0.714);
+    box-shadow: var(--box-shadow);" method="post">
 
          <div class="container">
 
             <div class="box">
                <p>name <span>*</span></p>
-               <input type="text" class="input" placeholder="Your Name">
+               <input type="text" class="input" placeholder="Your Name" name="name">
             </div><br>
 
             <div class="box">
                <p>email <span>*</span></p>
-               <input type="text" class="input" placeholder="Your Email">
+               <input type="email" class="input" placeholder="Your Email" name="email">
             </div>
 
             <div class="box">
                <p>Message</p>
-               <textarea name="message" class="input" id="message"></textarea>
+               <textarea name="message" class="input" id="message" name="message"></textarea>
             </div>
 
          </div>
