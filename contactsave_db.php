@@ -21,7 +21,7 @@
 		// Execute the prepared statement
 if ($stmt->execute()) {
     echo "<h3>Data stored in the Bow hotel database successfully.</h3>";
-    echo nl2br("\n$cName\n$cEmail\n$cMessage");
+    echo htmlentities($cName.$cEmail.$cMessage, ENT_QUOTES, 'UTF-8');
 } else {
         throw new Exception("ERROR: Could not execute query: " . $stmt->error);
     }
