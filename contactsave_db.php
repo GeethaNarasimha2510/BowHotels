@@ -1,5 +1,5 @@
 <?php
-
+		try {
 		// servername => localhost now rds endpoint
 		// username => root now your db username 
 		// password => empty now your oen password
@@ -8,8 +8,7 @@
 		
 		// Check connection
 		if($conn === false){
-			die("ERROR: Could not connect. "
-				. mysqli_connect_error());
+			throw new Exception("Connection failed: " . $conn->connect_error);
 		}
 		
 		// Taking all 5 values from the form data(input)
@@ -24,10 +23,14 @@ if ($stmt->execute()) {
     echo "<h3>Data stored in the Bow hotel database successfully.</h3>";
     echo nl2br("\n$cName\n$cEmail\n$cMessage");
 } else {
-    echo "ERROR: Could not execute query: " . $stmt->error;
-}
+        throw new Exception("ERROR: Could not execute query: " . $stmt->error);
+    }
 
 // Close statement and connection
 $stmt->close();
 mysqli_close($conn);
+} catch (Exception $e) {
+    error_log($e->getMessage());
+    echo "An error occurred while processing your request. Please try again later.";
+}
 ?>
